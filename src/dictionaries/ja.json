@@ -1,0 +1,62 @@
+{
+  "nav": {
+    "home": "ホーム",
+    "shop": "ショップ",
+    "games": "ゲーム",
+    "news": "ニュース",
+    "about": "自己紹介",
+    "contact": "お問い合わせ",
+    "privacy": "プライバシーポリシー"
+  },
+  "home": {
+    "title": "日本の美学に着想を得た世界を創る",
+    "subtitle": "ビジュアルノベル、JRPG、アニメ調の世界観、そして心に残る物語",
+    "featuredTitle": "注目のゲーム",
+    "inDevelopment": "開発中",
+    "pleaseWait": "しばらくお待ちください"
+  },
+  "games": {
+    "title": "ゲーム",
+    "subtitle": "日本の美学に着想を得たビジュアルノベルとJRPG",
+    "sectionTitle": "タイトル",
+    "status": "ビジュアルノベル（開発中）"
+  },
+
+  "news": {
+    "title": "最新ニュース",
+    "subtitle": "Team Letiziaからの最新のお知らせをチェック",
+    "sectionLabel": "セクション - ニュース",
+    "readMore": "続きを読む >",
+    "cardTitle": "次のプロジェクト",
+    "cardExcerpt": "私たちのスタジオがご紹介したい新しいビジュアルノベル企画です"
+  },
+
+  "privacyPage": {
+    "title": "プライバシーポリシー",
+    "note": "本ページは正式版として英語で提供しています。利便性のために翻訳を追加する場合があります。",
+    "lastUpdated": "最終更新"
+  },
+
+  "about": {
+    "title": "自己紹介",
+    "tagline": "Team Letiziaのビジョンと、創作を支える旅路をご紹介します。",
+    "headline": "Simone ― 物語を紡ぐ人",
+    "p1": "こんにちは！私はSimoneです。ビジュアルノベルとJRPGを通じて世界を創り出すことに情熱を注ぐ、開発者でありストーリーテラーです。私の作品は日本の名作が持つ美学と精神に強く影響を受けており、いつも“唯一無二で、ひと目でわかる魂”を宿すことを目指しています。",
+    "p2": "私の使命はシンプルです。壮大な物語と没入感のあるゲーム体験を形にすること。すべてのプロジェクトは新たな宇宙への架け橋であり、難しい選択、忘れられないキャラクター、そしてプレイヤー体験への細部までのこだわりで築かれています。",
+    "p3": "Game Design、Character Art、Narrative Developmentの確かな基盤を活かし、ただ楽しませるだけでなく、心を掴み、考えるきっかけを与える体験を目指しています。"
+  },
+  "contact": {
+    "title": "お問い合わせ",
+    "subtitle": "Team Letiziaへお気軽にご連絡ください",
+    "sectionTitle": "メッセージを送る",
+    "namePlaceholder": "お名前",
+    "emailPlaceholder": "メールアドレス",
+    "messagePlaceholder": "メッセージ",
+    "send": "送信",
+    "success": "送信しました！",
+    "error": "送信に失敗しました。もう一度お試しください。"
+  }
+
+
+
+}

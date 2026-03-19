@@ -1,0 +1,65 @@
+{
+  "nav": {
+    "home": "首页",
+    "shop": "商店",
+    "games": "游戏",
+    "news": "新闻",
+    "about": "关于我",
+    "contact": "联系",
+    "privacy": "隐私政策"
+  },
+  "home": {
+    "title": "打造受日本美学启发的世界",
+    "subtitle": "视觉小说、JRPG、动漫风格世界观与动人故事",
+    "featuredTitle": "精选游戏",
+    "inDevelopment": "开发中",
+    "pleaseWait": "请耐心等待"
+
+  },
+  "games": {
+    "title": "我们的游戏",
+    "subtitle": "受日本美学启发的视觉小说与JRPG",
+    "sectionTitle": "作品",
+    "status": "视觉小说（开发中）"
+  },
+  "news": {
+    "title": "最新消息",
+    "subtitle": "随时了解 Team Letizia 的最新公告",
+    "sectionLabel": "栏目 - 新闻",
+    "readMore": "阅读更多 >",
+    "cardTitle": "下一个项目",
+    "cardExcerpt": "我们工作室想向你介绍的一款全新视觉小说项目"
+  },
+  "privacyPage": {
+    "title": "隐私政策",
+    "note": "本页面以英文作为正式版本提供。如有需要，可能仅为方便阅读提供翻译。",
+    "lastUpdated": "最后更新"
+  },
+
+  "about": {
+    "title": "关于我",
+    "tagline": "了解 Team Letizia 背后的愿景，以及驱动我们创作的旅程。",
+    "headline": "Simone，故事编织者",
+    "p1": "你好！我是 Simone，一名专注的开发者与叙事创作者，我的热情是通过视觉小说与 JRPG 来塑造世界。我的作品深受日本经典作品的美学与精神所启发，并始终努力让创作拥有独特且易于辨识的灵魂。",
+    "p2": "我的使命很简单：让史诗般的叙事与引人入胜的玩法得以实现。每一个项目都是通往新宇宙的桥梁，由充满挑战的选择、令人难忘的角色，以及对玩家体验的细致打磨所构建。",
+    "p3": "凭借在游戏设计、角色美术与叙事开发方面的扎实基础，我希望创造的不只是娱乐作品，更是能够打动人心并引发思考的体验。"
+  },
+
+  "contact": {
+    "title": "联系我们",
+    "subtitle": "与 Team Letizia 取得联系",
+    "sectionTitle": "发送消息",
+    "namePlaceholder": "你的姓名",
+    "emailPlaceholder": "你的邮箱",
+    "messagePlaceholder": "你的留言",
+    "send": "发送",
+    "success": "消息发送成功！",
+    "error": "发送失败，请重试。"
+  }
+
+
+
+
+
+
+}

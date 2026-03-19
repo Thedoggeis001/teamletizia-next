@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMPERIUM EUROPAE: DIES TRISTIS – Team Letizia</title>
+
+    <style>
+        :root {
+            --bg-dark: #121212;
+            --text-light: #f0f0f0;
+            --text-secondary: #aaaaaa;
+            --pink-neon: #ff69b4;
+            --pink-neon-shadow: 0 0 8px rgba(255, 105, 180, 0.7);
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            margin: 0;
+        }
+
+        a {
+            color: var(--pink-neon);
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #ff85c1;
+        }
+
+        /* --- BACK BUTTON --- */
+        .back-to-news {
+            display: inline-flex;
+            align-items: center;
+            margin-bottom: 25px;
+            font-size: 1.1em;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .back-to-news:hover {
+            transform: translateX(-5px);
+            transition: transform 0.3s;
+        }
+
+        .arrow-icon {
+            font-size: 1.5em;
+            margin-right: 8px;
+            text-shadow: var(--pink-neon-shadow);
+        }
+
+        /* --- LAYOUT --- */
+        .article-page-container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        /* --- HEADER --- */
+        .article-title {
+            color: var(--pink-neon);
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: var(--pink-neon-shadow);
+        }
+
+        .article-summary {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .article-metadata {
+            color: var(--text-secondary);
+            font-size: 0.9em;
+        }
+
+        .article-hero-image img {
+            width: 100%;
+            margin-top: 30px;
+            border-radius: 6px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.5);
+        }
+
+        /* --- BODY --- */
+        .article-body {
+            margin-top: 40px;
+        }
+
+        .article-body p {
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            color: var(--pink-neon);
+            font-size: 2em;
+            margin: 40px 0 15px;
+        }
+
+        .pink-blockquote {
+            border-left: 5px solid var(--pink-neon);
+            padding: 15px 20px;
+            margin: 30px 0;
+            color: var(--text-secondary);
+            font-style: italic;
+            background-color: #1a1a1a;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .article-title {
+                font-size: 2.2em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<main class="article-page-container">
+
+    <a href="../news.html" class="back-to-news">
+        <span class="arrow-icon">&lt;</span> 返回所有新闻
+    </a>
+
+    <header>
+        <h1 class="article-title">IMPERIUM EUROPAE: DIES TRISTIS</h1>
+
+        <p class="article-summary">
+            Team Letizia 公布了他们的下一个叙事项目：
+            一部关于记忆、身份，以及当历史继续前行而我们被遗忘时，
+            所剩下的一切的视觉小说。
+        </p>
+
+        <div class="article-metadata">
+            发布日期：2025年8月5日 · 作者：Team Letizia
+        </div>
+
+        <figure class="article-hero-image">
+            <img src="file_chi\TIBOR_KALUSS.png"
+                 alt="Imperium Europae: Dies Tristis – 视觉小说公开">
+        </figure>
+    </header>
+
+    <section class="article-body">
+        <p>
+            <strong>Imperium Europae: Dies Tristis</strong>
+            是一部设定在当代欧洲的叙事型视觉小说，
+            故事通过两个早已不再属于这个时代的角色的视角展开。
+            蒂博尔，一头奥匈帝国的野猪，曾是帝国步兵军官；
+            施特劳斯，一只拥有哈布斯堡贵族血统的鹰。
+            他们在一个已经遗忘了塑造他们之世界的现实中苏醒。
+        </p>
+
+        <p>
+            现代城市在昔日帝国的遗址上崛起。
+            语言发生了改变，象征逐渐褪色，
+            记忆被压缩成博物馆里的标签和装饰性的历史陈列。
+            蒂博尔与施特劳斯所面对的，
+            不只是物理层面的废墟，而是更深层次的崩塌——意义的消失。
+        </p>
+
+        <h2 class="section-title">✨ 第一章：曾经的欧洲</h2>
+        <p>
+            故事从黎明时分的维也纳开始。
+            建筑工地、广告屏幕和陌生的旗帜环绕四周，
+            他们曾效忠的帝国早已不复存在，
+            而欧洲本身似乎也无法——或不愿——为他们提供立足之地。
+        </p>
+
+        <p>
+            他们的旅程穿越维也纳、布达佩斯、的里雅斯特、萨拉热窝和布鲁塞尔。
+            每一座城市都象征着一种不同的创伤：
+            被消费成景观的记忆、破碎的民族主义、
+            流动而不稳定的身份、尚未愈合的创伤，
+            以及失去灵魂的官僚体制。
+        </p>
+
+        <blockquote class="pink-blockquote">
+            “当定义身份的世界不复存在时，身份还剩下什么？”
+        </blockquote>
+
+        <h2 class="section-title">🧭 两件遗物，没有祖国</h2>
+        <p>
+            蒂博尔通过适应而生存。
+            他仍然相信纪律与秩序，但已不再相信未来。
+            与之相对，施特劳斯拒绝接受一个没有等级、
+            没有责任、也没有道德结构的世界。
+            他并不试图复兴过去，
+            而是用过去所拥有的东西去直面当下的匮乏。
+        </p>
+
+        <p>
+            他们之间的关系通过对话选择不断变化，
+            这些选择从来没有对错之分，只是揭示内心。
+            距离、信任与意识形态的裂痕，
+            往往不是通过正面冲突，而是在沉默中悄然滋生。
+        </p>
+
+        <h2 class="section-title">🎭 主题与基调</h2>
+        <p>
+            Imperium Europae: Dies Tristis
+            既不是对往昔的怀旧颂歌，也不是政治宣言。
+            它是一部存在主义戏剧，
+            融合了细腻的政治讽刺，
+            聚焦于责任、无关紧要感，
+            以及后历史时代欧洲中记忆的重量。
+        </p>
+
+        <blockquote class="pink-blockquote">
+            “帝国并非只死一次。
+            当再也没有人记得它们为何重要时，它们会再次死去。”
+        </blockquote>
+
+        <h2 class="section-title">🕹️ 游戏玩法与结构</h2>
+        <p>
+            游戏玩法以叙事选择和角色关系为核心。
+            隐藏的变量塑造着故事走向，
+            并引导玩家走向多个结局，
+            每一个结局都对同一场崩塌给出不同的回应。
+        </p>
+
+        <p>
+            单次流程时长约为五到七小时，
+            不同路线揭示的并非“更好的结果”，
+            而是新的视角。
+        </p>
+
+        <h2 class="section-title">📅 展望未来</h2>
+        <p>
+            Imperium Europae: Dies Tristis 目前仍在开发中。
+            更多信息将在未来数月内公布。
+        </p>
+
+        <p>
+            本项目体现了 Team Letizia 对叙事体验的坚持：
+            尊重玩家的智慧与情感投入，
+            创作那些即使屏幕熄灭后，
+            仍能长久回荡于心的故事。
+        </p>
+    </section>
+
+</main>
+
+</body>
+</html>

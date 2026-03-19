@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Team Letizia - 我们的游戏</title>
+
+<style>
+
+/* ================= RESET / BASE ================= */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #1a1a2e;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ================= HEADER ================= */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 30px;
+    background-color: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+/* LOGO */
+.logo-container {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+
+.logo-icon {
+    background: #ff007f;
+    padding: 5px 10px;
+    margin-right: 6px;
+    border-radius: 4px;
+}
+
+/* ================= NAV ================= */
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav li {
+    margin-left: 25px;
+}
+
+.main-nav a {
+    opacity: 0.8;
+    padding-bottom: 4px;
+}
+
+.main-nav a.active,
+.main-nav a:hover {
+    color: #ff007f;
+    border-bottom: 2px solid #ff007f;
+    opacity: 1;
+}
+
+/* ================= HERO ================= */
+.hero-section {
+    background-image: url("games_background.jpg");
+    background-size: cover;
+    background-position: center bottom;
+    padding-top: calc(80px + 40px);
+    padding-bottom: 60px;
+    text-align: center;
+    box-shadow: inset 0 0 100px rgba(0,0,0,0.8);
+    min-height: 60vh;
+}
+
+.page-header h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.page-header p {
+    color: #ccc;
+}
+
+/* ================= GAMES ================= */
+.games-section {
+    background: #0d0d1a;
+    padding: 40px 30px;
+}
+
+.games-section h2 {
+    margin-bottom: 20px;
+}
+
+.games-grid {
+    display: flex;
+    justify-content: center;
+}
+
+.game-card {
+    width: 350px;
+    height: 350px;
+    background-image: url("news_chi/file_chi/fight.jpeg");
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    border: 2px solid rgba(255,0,127,0.4);
+    box-shadow: 0 0 10px rgba(255,0,127,0.2);
+    position: relative;
+    transition: 0.3s;
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(255,0,127,0.7);
+    border-color: #ff007f;
+}
+
+.card-content {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+}
+
+/* ================= FOOTER ================= */
+footer {
+    margin-top: auto;
+    background: rgba(17,17,17,0.9);
+    text-align: center;
+    padding: 25px;
+    font-size: 14px;
+    color: #888;
+}
+
+/* ================= MOBILE (CORRETTO) ================= */
+@media (max-width: 768px) {
+
+    /* HEADER NON OVERLAY */
+    .site-header {
+        position: static;
+        flex-direction: column;
+        align-items: center;
+        background: #000;
+        padding: 20px;
+    }
+
+    /* MENU A TENDINA NERA */
+    .main-nav {
+        width: 100%;
+        background: #000;
+        margin-top: 15px;
+        padding: 20px 0;
+        border-top: 1px solid #222;
+        border-bottom: 1px solid #222;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .main-nav li {
+        margin: 14px 0;
+    }
+
+    .main-nav a {
+        font-size: 18px;
+    }
+
+    /* CONTENUTO PARTE DOPO IL MENU */
+    .hero-section {
+        padding-top: 40px;
+        min-height: auto;
+    }
+
+    .page-header h1 {
+        font-size: 2.3em;
+    }
+
+    .games-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .game-card {
+        width: 90%;
+        height: 320px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="site-header">
+    <div class="logo-container">
+        <span class="logo-icon">L</span> TEAM LETIZIA
+    </div>
+
+    <nav class="main-nav">
+        <ul>
+            <li><a href="main.html">首页</a></li>
+            <li><a href="games.html" class="active">游戏</a></li>
+            <li><a href="news.html">新闻</a></li>
+            <li><a href="about.html">关于我</a></li>
+            <li><a href="contact.html">联系</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero-section">
+    <div class="page-header">
+        <h1>我们的游戏</h1>
+        <p>受日本美学启发的视觉小说与 JRPG</p>
+    </div>
+</section>
+
+<section class="games-section">
+    <h2>作品列表</h2>
+    <div class="games-grid">
+        <a href="news_chi/next_project.html" class="game-card">
+            <div class="card-content">
+                <h3>IMPERIUM EUROPAE: DIES TRISTIS</h3>
+                <p>视觉小说（开发中）</p>
+            </div>
+        </a>
+    </div>
+</section>
+
+<footer>
+    © 2025 Team Letizia — 版权所有
+</footer>
+
+</body>
+</html>
+

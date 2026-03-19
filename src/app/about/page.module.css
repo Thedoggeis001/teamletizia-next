@@ -1,0 +1,135 @@
+/* Wrapper pagina: riempie lo schermo e permette footer “sticky” */
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Base */
+.page :global(body) {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #0a0a0a;
+  color: #fff;
+}
+
+/* HEADER */
+.page :global(.site-header) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: #111;
+  border-bottom: 2px solid #222;
+  flex-wrap: wrap;
+}
+
+.page :global(.logo-container) {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.page :global(.logo-icon) {
+  background: #e91e63;
+  padding: 10px 14px;
+  border-radius: 6px;
+}
+
+.page :global(.team-name) {
+  letter-spacing: 2px;
+}
+
+/* NAV */
+.page :global(.main-nav ul) {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  padding: 0;
+  margin: 0;
+}
+
+.page :global(.main-nav a) {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.2s ease;
+}
+
+.page :global(.main-nav a:hover),
+.page :global(.main-nav a.active) {
+  color: #e91e63;
+}
+
+/* ABOUT: questa è la parte che elimina il “vuoto sotto”
+   - flex: 1 => prende tutto lo spazio disponibile
+   - padding-top gestisce lo spazio sotto header
+*/
+.page :global(.about-section) {
+  flex: 1; /* ✅ RIEMPIE la viewport e spinge il footer in basso */
+  padding: 90px 20px 60px;
+  text-align: center;
+
+  background: url("/oriental-bg.jpg") center/cover no-repeat;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.page :global(.tagline) {
+  color: #ccc;
+  max-width: 820px;
+  margin: 10px auto 30px;
+}
+
+.page :global(.profile-container) {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.page :global(.profile-img) {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 3px solid #0525d6;
+  object-fit: cover;
+}
+
+/* FOOTER: niente margin-top, lo gestisce il layout flex */
+.page :global(footer) {
+  text-align: center;
+  padding: 30px;
+  background: #111;
+  color: #777;
+  border-top: 2px solid #222;
+  margin-top: 0; /* ✅ elimina lo “stacco” + vuoto */
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .page :global(.site-header) {
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+  }
+
+  .page :global(.main-nav ul) {
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .page :global(.about-section) {
+    padding: 60px 20px 40px;
+  }
+
+  .page :global(footer) {
+    font-size: 14px;
+    padding: 20px;
+  }
+}

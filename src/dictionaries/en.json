@@ -1,0 +1,62 @@
+{
+  "nav": {
+    "home": "Home",
+    "games": "Games",
+    "shop": "Shop",
+    "news": "News",
+    "about": "About Me",
+    "contact": "Contact",
+    "privacy": "Privacy Policy"
+  },
+  "home": {
+    "title": "Creating Worlds Inspired by Japanese Aesthetics",
+    "subtitle": "Visual Novels, JRPGs, anime-style universes, and emotional stories",
+    "featuredTitle": "Featured Games",
+    "inDevelopment": "IN DEVELOPMENT",
+    "pleaseWait": "Please wait patiently"
+  },
+
+  "games": {
+    "title": "Our Games",
+    "subtitle": "Visual novels and JRPGs inspired by Japanese aesthetics",
+    "sectionTitle": "Titles",
+    "status": "Visual novel (in development)"
+  },
+
+  "news": {
+    "title": "Latest News",
+    "subtitle": "Stay up to date with the latest announcements from Team Letizia",
+    "sectionLabel": "Section - News",
+    "readMore": "Read more >",
+    "cardTitle": "Next Project",
+    "cardExcerpt": "A new visual novel project our studio would like to present to you"
+    },
+  "privacyPage": {
+    "title": "Privacy Policy",
+    "note": "This page is provided in English as the authoritative version. Translations may be added for convenience.",
+    "lastUpdated": "Last updated"
+  },
+
+  "about": {
+    "title": "About Me",
+    "tagline": "Discover the vision behind Team Letizia and the journey that drives our craft.",
+    "headline": "Simone, The Story Weaver",
+    "p1": "Hello! I'm Simone, a dedicated developer and storyteller whose passion is to forge worlds through Visual Novels and JRPGs. My work is deeply inspired by the aesthetics and spirit of Japanese classics, always striving to infuse my creations with a unique and recognizable soul.",
+    "p2": "My mission is simple: to bring epic narratives and engaging gameplay to life. Every project is a bridge to a new universe, built on challenging choices, memorable characters, and meticulous attention to the player experience.",
+    "p3": "With a solid background in Game Design, Character Art, and Narrative Development, I aim to create experiences that not only entertain, but also captivate and inspire reflection."
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Get in touch with Team Letizia",
+    "sectionTitle": "Send a Message",
+    "namePlaceholder": "Your Name",
+    "emailPlaceholder": "Your Email",
+    "messagePlaceholder": "Your Message",
+    "send": "Send",
+    "success": "Message sent successfully!",
+    "error": "Error sending message. Please try again."
+  }
+
+
+
+}

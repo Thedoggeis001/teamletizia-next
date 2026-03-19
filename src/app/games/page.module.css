@@ -1,0 +1,287 @@
+/* =========================
+   Base / Reset (scoped)
+========================= */
+.page :global(*) {
+  box-sizing: border-box;
+}
+
+.page :global(html),
+.page :global(body) {
+  height: 100%;
+}
+
+.page :global(body) {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #1a1a2e;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+.page :global(a) {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* =========================
+   Header
+========================= */
+.page :global(.site-header) {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 18px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+
+  background: rgba(0, 0, 0, 0.6);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(6px);
+}
+
+.page :global(.logo-container) {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.page :global(.logo-icon) {
+  background: #ff007f;
+  padding: 6px 10px;
+  margin-right: 8px;
+  border-radius: 6px;
+}
+
+/* =========================
+   Nav
+========================= */
+.page :global(.main-nav ul) {
+  list-style: none;
+  display: flex;
+  gap: 22px;
+  margin: 0;
+  padding: 0;
+}
+
+.page :global(.main-nav li) {
+  margin: 0;
+}
+
+.page :global(.main-nav a) {
+  opacity: 0.85;
+  padding: 6px 0;
+  border-bottom: 2px solid transparent;
+  transition: opacity 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.page :global(.main-nav a.active),
+.page :global(.main-nav a:hover) {
+  opacity: 1;
+  color: #ff007f;
+  border-color: #ff007f;
+}
+
+/* =========================
+   Hero
+========================= */
+.page :global(.hero-section) {
+  background-image: url("/games_background.jpg");
+  background-size: cover;
+  background-position: center bottom;
+
+  /* Compensa header fisso */
+  padding: 120px 30px 70px;
+  text-align: center;
+
+  box-shadow: inset 0 0 110px rgba(0, 0, 0, 0.82);
+  min-height: 60vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page :global(.page-header) {
+  max-width: 900px;
+}
+
+.page :global(.page-header h1) {
+  font-size: 3rem;
+  margin: 0 0 12px;
+  line-height: 1.1;
+}
+
+.page :global(.page-header p) {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* =========================
+   Games Section
+========================= */
+.page :global(.games-section) {
+  background: #0d0d1a;
+  padding: 48px 30px;
+}
+
+.page :global(.games-section h2) {
+  margin: 0 0 22px;
+}
+
+.page :global(.games-grid) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* =========================
+   Game Card
+========================= */
+.page :global(.game-card) {
+  width: 360px;
+  height: 360px;
+
+  border-radius: 14px;
+  position: relative;
+  overflow: hidden;
+
+  background-image: url("/NEWS_ENG/file/fight.jpeg");
+  background-size: cover;
+  background-position: center;
+
+  border: 2px solid rgba(255, 0, 127, 0.4);
+  box-shadow: 0 0 12px rgba(255, 0, 127, 0.18);
+  transform: translateZ(0);
+  transition: transform 0.2s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+/* overlay leggero per aumentare contrasto testo */
+.page :global(.game-card::before) {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 50% 40%,
+    rgba(0, 0, 0, 0.25),
+    rgba(0, 0, 0, 0.65)
+  );
+}
+
+.page :global(.game-card:hover) {
+  transform: translateY(-6px);
+  border-color: #ff007f;
+  box-shadow: 0 0 28px rgba(255, 0, 127, 0.65);
+}
+
+/* =========================
+   Card Content (FIX CENTRATURA)
+========================= */
+.page :global(.card-content) {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  padding: 18px 16px;
+  z-index: 1;
+
+  /* gradiente più “pulito” */
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.92),
+    rgba(0, 0, 0, 0.45),
+    rgba(0, 0, 0, 0)
+  );
+
+  /* CENTRA davvero testo */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 6px;
+}
+
+/* se dentro card-content hai h3/h2 ecc */
+.page :global(.card-content h3),
+.page :global(.card-content h2) {
+  margin: 0;
+  font-size: 1.35rem;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+/* se hai la riga sotto tipo "Visual novel (in development)" */
+.page :global(.card-content p) {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.98rem;
+}
+
+/* se vuoi dare il fucsia al titolo come in screenshot */
+.page :global(.card-content .title),
+.page :global(.card-content .accent) {
+  color: #ff007f;
+  font-weight: 800;
+}
+
+/* =========================
+   Footer
+========================= */
+.page :global(footer) {
+  margin-top: auto;
+  background: rgba(17, 17, 17, 0.92);
+  text-align: center;
+  padding: 24px 18px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* =========================
+   Mobile
+========================= */
+@media (max-width: 768px) {
+  .page :global(.site-header) {
+    position: static;
+    flex-direction: column;
+    gap: 14px;
+    background: #000;
+    padding: 18px 16px;
+  }
+
+  .page :global(.main-nav) {
+    width: 100%;
+    border-top: 1px solid #222;
+    border-bottom: 1px solid #222;
+    padding: 14px 0;
+  }
+
+  .page :global(.main-nav ul) {
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .page :global(.hero-section) {
+    padding: 44px 16px 48px;
+    min-height: auto;
+  }
+
+  .page :global(.page-header h1) {
+    font-size: 2.2rem;
+  }
+
+  .page :global(.games-grid) {
+    flex-direction: column;
+  }
+
+  .page :global(.game-card) {
+    width: min(92vw, 380px);
+    height: 320px;
+  }
+}

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Letizia - ビジュアルノベル & JRPG（日本風美学）</title>
+
+    <style>
+        /* BASE & TYPOGRAPHY */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #0a0a0a;
+            color: #fff;
+        }
+
+        /* HEADER */
+        .site-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background: #111;
+            border-bottom: 2px solid #222;
+            flex-wrap: wrap;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .logo-icon {
+            background: #e91e63;
+            padding: 10px 14px;
+            border-radius: 6px;
+        }
+
+        .team-name {
+            letter-spacing: 2px;
+        }
+
+        .main-nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            padding: 0;
+            margin: 0;
+        }
+
+        .main-nav a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 16px;
+            transition: 0.2s;
+        }
+
+        .main-nav a:hover,
+        .main-nav a.active {
+            color: #e91e63;
+        }
+
+        /* LANGUAGE SELECTOR */
+        .lang-selector select {
+            background-color: #111;
+            color: #fff;
+            border: 1px solid #e91e63;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            min-width: 150px;
+        }
+
+        /* HERO */
+        .hero {
+            text-align: center;
+            padding: 150px 20px;
+            background: url('hero.jpg') center/cover no-repeat;
+            background-color: #330033;
+            border-bottom: 5px solid #e91e63;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(233, 30, 99, 0.5);
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #ccc;
+            min-height: 25px;
+        }
+
+        /* TYPEWRITER */
+        .typewriter-cursor {
+            display: inline-block;
+            width: 2px;
+            height: 1.2em;
+            margin-left: 3px;
+            background-color: #e91e63;
+            animation: blink 0.7s infinite;
+        }
+
+        @keyframes blink {
+            0%,100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* FEATURED GAMES */
+        .featured-games {
+            padding: 80px 40px;
+            text-align: center;
+        }
+
+        .featured-games h2 {
+            font-size: 32px;
+            margin-bottom: 40px;
+            border-bottom: 2px solid #e91e63;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .game-list {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .game-card {
+            background: #111;
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid #222;
+            width: 300px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.3s, border-color 0.3s;
+            display: block;
+        }
+
+        .game-card:hover {
+            transform: translateY(-5px);
+            border-color: #e91e63;
+        }
+
+        .game-card h3 {
+            color: #e91e63;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+
+        .game-card p {
+            color: #aaa;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #111;
+            color: #777;
+            border-top: 2px solid #222;
+            margin-top: 50px;
+        }
+
+        /* ========================= */
+        /* 📱 MOBILE RESPONSIVE FIX */
+        /* ========================= */
+
+        @media (max-width: 768px) {
+
+            .site-header {
+                flex-direction: column;
+                gap: 15px;
+                padding: 20px;
+            }
+
+            .main-nav ul {
+                flex-direction: column;
+                gap: 12px;
+                align-items: center;
+            }
+
+            .lang-selector select {
+                width: 100%;
+                max-width: 220px;
+            }
+
+            .hero {
+                padding: 80px 20px;
+            }
+
+            .hero h1 {
+                font-size: 30px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .featured-games {
+                padding: 50px 20px;
+            }
+
+            .featured-games h2 {
+                font-size: 26px;
+            }
+
+            .game-card {
+                width: 100%;
+                max-width: 340px;
+            }
+
+            footer {
+                font-size: 14px;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="site-header">
+    <div class="logo-container">
+        <span class="logo-icon">L</span>
+        <span class="team-name">TEAM LETIZIA</span>
+    </div>
+
+    <nav class="main-nav">
+        <ul>
+            <li><a href="index.html" class="active">ホーム</a></li>
+            <li><a href="games.html">ゲーム</a></li>
+            <li><a href="news.html">ニュース</a></li>
+            <li><a href="about.html">私について</a></li>
+            <li><a href="contact.html">お問い合わせ</a></li>
+        </ul>
+    </nav>
+
+    <div class="lang-selector">
+        <select onchange="changeSiteLanguage(this.value)">
+            <option disabled selected>言語を選択</option>
+            <option value="en">🇺🇸 English</option>
+            <option value="jp">🇯🇵 Japanese</option>
+            <option value="cn">🇨🇳 Chinese</option>
+            <option value="es">🇪🇸 Spanish</option>
+        </select>
+    </div>
+</header>
+
+<section class="hero">
+    <h1>日本の美学にインスパイアされた世界を創造する</h1>
+    <p id="hero-subtitle">
+        ビジュアルノベル、JRPG、アニメ風の世界観、そして感情的な物語。
+    </p>
+</section>
+
+<section class="featured-games">
+    <h2>注目のゲーム</h2>
+    <div class="game-list">
+        <a href="news_jap/next_project.html" class="game-card">
+            <h3>開発中</h3>
+            <p>しばらくお待ちください</p>
+        </a>
+    </div>
+</section>
+
+<footer>
+    © 2025 Team Letizia — 無断転載禁止
+</footer>
+
+<script>
+    function changeSiteLanguage(lang) {
+        const fileMap = {
+            en: "../../main.html",
+            jp: "../JAP/main.html",
+            cn: "../CHI/main.html",
+            es: "../ESP/main.html"
+        };
+        if (fileMap[lang]) {
+            window.location.href = fileMap[lang];
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const el = document.getElementById("hero-subtitle");
+        const text = el.textContent;
+        let i = 0;
+        el.textContent = "";
+
+        function type() {
+            if (i < text.length) {
+                el.innerHTML = text.substring(0, i + 1) +
+                    '<span class="typewriter-cursor"></span>';
+                i++;
+                setTimeout(type, 50);
+            } else {
+                el.textContent = text;
+            }
+        }
+        type();
+    });
+</script>
+
+</body>
+</html>
+

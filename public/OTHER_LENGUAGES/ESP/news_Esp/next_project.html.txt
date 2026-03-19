@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMPERIUM EUROPAE: DIES TRISTIS – Team Letizia</title>
+
+    <style>
+        :root {
+            --bg-dark: #121212;
+            --text-light: #f0f0f0;
+            --text-secondary: #aaaaaa;
+            --pink-neon: #ff69b4;
+            --pink-neon-shadow: 0 0 8px rgba(255, 105, 180, 0.7);
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            margin: 0;
+        }
+
+        a {
+            color: var(--pink-neon);
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #ff85c1;
+        }
+
+        /* --- BACK BUTTON --- */
+        .back-to-news {
+            display: inline-flex;
+            align-items: center;
+            margin-bottom: 25px;
+            font-size: 1.1em;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .back-to-news:hover {
+            transform: translateX(-5px);
+            transition: transform 0.3s;
+        }
+
+        .arrow-icon {
+            font-size: 1.5em;
+            margin-right: 8px;
+            text-shadow: var(--pink-neon-shadow);
+        }
+
+        /* --- LAYOUT --- */
+        .article-page-container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        /* --- HEADER --- */
+        .article-title {
+            color: var(--pink-neon);
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: var(--pink-neon-shadow);
+        }
+
+        .article-summary {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .article-metadata {
+            color: var(--text-secondary);
+            font-size: 0.9em;
+        }
+
+        .article-hero-image img {
+            width: 100%;
+            margin-top: 30px;
+            border-radius: 6px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.5);
+        }
+
+        /* --- BODY --- */
+        .article-body {
+            margin-top: 40px;
+        }
+
+        .article-body p {
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            color: var(--pink-neon);
+            font-size: 2em;
+            margin: 40px 0 15px;
+        }
+
+        .pink-blockquote {
+            border-left: 5px solid var(--pink-neon);
+            padding: 15px 20px;
+            margin: 30px 0;
+            color: var(--text-secondary);
+            font-style: italic;
+            background-color: #1a1a1a;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .article-title {
+                font-size: 2.2em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<main class="article-page-container">
+
+    <a href="C:\Users\scast\Desktop\programms\my new website\OTHER_LENGUAGES\ESP\news.html" class="back-to-news">
+        <span class="arrow-icon">&lt;</span> Volver a todas las noticias
+    </a>
+
+    <header>
+        <h1 class="article-title">IMPERIUM EUROPAE: DIES TRISTIS</h1>
+
+        <p class="article-summary">
+            Team Letizia presenta su próximo proyecto narrativo: una novela visual sobre la memoria,
+            la identidad y lo que permanece cuando la historia continúa sin nosotros.
+        </p>
+
+        <div class="article-metadata">
+            Fecha de publicación: 5 de agosto de 2025 · Autor: Team Letizia
+        </div>
+
+        <figure class="article-hero-image">
+            <img src="file_Esp\TIBOR_KALUSS.png"
+                 alt="Imperium Europae: Dies Tristis – Presentación de la novela visual">
+        </figure>
+    </header>
+
+    <section class="article-body">
+        <p>
+            <strong>Imperium Europae: Dies Tristis</strong> es una novela visual narrativa ambientada
+            en la Europa contemporánea, vista a través de los ojos de dos figuras que ya no le
+            pertenecen. Tibor, un jabalí austrohúngaro y antiguo oficial de infantería imperial, y
+            Straus, un águila de linaje aristocrático Habsburgo, despiertan en un mundo que ha
+            olvidado aquel que les dio forma.
+        </p>
+
+        <p>
+            Las ciudades modernas se alzan donde antes existieron imperios. Los idiomas han cambiado,
+            los símbolos se han desvanecido y la memoria se ha reducido a etiquetas de museo y a una
+            historia decorativa. Lo que Tibor y Straus encuentran no es solo ruina física, sino un
+            colapso más profundo: la pérdida de significado.
+        </p>
+
+        <h2 class="section-title">✨ Capítulo I: La Europa que fue</h2>
+        <p>
+            La historia comienza en Viena al amanecer, entre obras en construcción, pantallas
+            publicitarias y banderas desconocidas. El imperio al que sirvieron ya no existe, y la
+            propia Europa parece incapaz —o poco dispuesta— a ofrecerles un lugar.
+        </p>
+
+        <p>
+            Su viaje atraviesa Viena, Budapest, Trieste, Sarajevo y Bruselas. Cada ciudad representa
+            una herida diferente: la memoria convertida en espectáculo, el nacionalismo fragmentado,
+            la identidad líquida, los traumas no resueltos y una burocracia sin alma.
+        </p>
+
+        <blockquote class="pink-blockquote">
+            “¿Qué queda de una identidad cuando el mundo que la definía ya no existe?”
+        </blockquote>
+
+        <h2 class="section-title">🧭 Dos reliquias, sin patria</h2>
+        <p>
+            Tibor sobrevive adaptándose. Cree en la disciplina y el orden, pero ya no en el futuro.
+            Straus, en cambio, se niega a aceptar un mundo sin jerarquía, responsabilidad ni estructura
+            moral. No busca restaurar el pasado, sino confrontar el presente con aquello que le falta.
+        </p>
+
+        <p>
+            Su relación evoluciona a través de elecciones de diálogo que nunca son correctas o
+            incorrectas, solo reveladoras. La distancia, la confianza y la fractura ideológica crecen
+            en silencio, más a menudo mediante la ausencia de conflicto que a través de él.
+        </p>
+
+        <h2 class="section-title">🎭 Temas y tono</h2>
+        <p>
+            Imperium Europae: Dies Tristis no es una celebración nostálgica ni un manifiesto político.
+            Es un drama existencial con una sutil sátira política, centrado en la responsabilidad, la
+            irrelevancia y el peso de la memoria en una Europa post-histórica.
+        </p>
+
+        <blockquote class="pink-blockquote">
+            “Los imperios no mueren una sola vez. Mueren de nuevo cuando nadie recuerda por qué
+            importaron.”
+        </blockquote>
+
+        <h2 class="section-title">🕹️ Jugabilidad y estructura</h2>
+        <p>
+            La jugabilidad se centra en las decisiones narrativas y en las relaciones entre
+            personajes. Variables invisibles moldean la historia y conducen a múltiples finales,
+            cada uno ofreciendo una respuesta distinta al mismo colapso.
+        </p>
+
+        <p>
+            Una partida completa dura aproximadamente entre cinco y siete horas, y las rutas
+            alternativas revelan nuevas perspectivas más que resultados “mejores”.
+        </p>
+
+        <h2 class="section-title">📅 Mirando al futuro</h2>
+        <p>
+            Imperium Europae: Dies Tristis se encuentra actualmente en desarrollo.
+            Se compartirá más información en los próximos meses.
+        </p>
+
+        <p>
+            Este proyecto representa el compromiso de Team Letizia con experiencias narrativas que
+            respetan la inteligencia y la implicación emocional del jugador: historias destinadas a
+            permanecer mucho tiempo después de que la pantalla se apague.
+        </p>
+    </section>
+
+</main>
+
+</body>
+</html>

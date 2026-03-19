@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ニュース - Team Letizia（サイバーパンク版）</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --color-bg-dark: #0d0d0f;
+            --color-bg-header: #15151a;
+            --color-bg-card: #1c1c20;
+            --color-neon-pink: #ff479a;
+            --color-neon-glow: rgba(255, 71, 154, 0.5);
+            --color-text-light: #f0f0f0;
+            --color-text-muted: #aaaaaa;
+            --color-border-subtle: #33333d;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', Arial, sans-serif;
+            background-color: var(--color-bg-dark);
+            color: var(--color-text-light);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* ================= HEADER ================= */
+        .site-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 50px;
+            background: var(--color-bg-header);
+            border-bottom: 1px solid var(--color-border-subtle);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .logo-icon {
+            background: var(--color-neon-pink);
+            padding: 8px 12px;
+            border-radius: 6px;
+            box-shadow: 0 0 10px var(--color-neon-glow);
+            font-weight: 900;
+            color: var(--color-bg-dark);
+        }
+
+        .main-nav ul {
+            list-style: none;
+            display: flex;
+            gap: 40px;
+            padding: 0;
+            margin: 0;
+        }
+
+        .main-nav a {
+            color: var(--color-text-light);
+            text-decoration: none;
+            font-weight: 600;
+            position: relative;
+        }
+
+        .main-nav a:hover,
+        .main-nav a.active {
+            color: var(--color-neon-pink);
+            text-shadow: 0 0 8px var(--color-neon-glow);
+        }
+
+        /* Hamburger (hidden desktop) */
+        .hamburger {
+            display: none;
+            font-size: 26px;
+            color: var(--color-neon-pink);
+            cursor: pointer;
+        }
+
+        /* ================= PAGE HEADER ================= */
+        .page-header {
+            text-align: center;
+            padding: 80px 50px;
+            background-color: #1a1a20;
+            border-bottom: 2px solid var(--color-neon-pink);
+        }
+
+        .page-header h1 {
+            font-size: 72px;
+            margin: 0;
+            color: var(--color-neon-pink);
+            letter-spacing: 6px;
+            text-shadow: 0 0 20px var(--color-neon-glow);
+        }
+
+        .page-header p {
+            font-size: 20px;
+            color: var(--color-text-muted);
+        }
+
+        /* ================= NEWS ================= */
+        .news-section-title {
+            max-width: 1200px;
+            margin: 40px auto 20px;
+            padding: 0 50px 10px;
+            font-size: 24px;
+            border-bottom: 1px solid var(--color-border-subtle);
+        }
+
+        .news-section {
+            padding: 40px 50px 80px;
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
+            gap: 30px;
+        }
+
+        .news-card {
+            background: var(--color-bg-card);
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid var(--color-border-subtle);
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            min-height: 220px;
+        }
+
+        .news-card h3 {
+            font-size: 20px;
+            margin-top: 0;
+        }
+
+        .news-card p {
+            color: var(--color-text-muted);
+            font-size: 15px;
+        }
+
+        .read-more {
+            background: var(--color-neon-pink);
+            color: var(--color-bg-dark);
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 14px;
+            width: fit-content;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: var(--color-bg-header);
+            color: var(--color-text-muted);
+            font-size: 14px;
+            border-top: 1px solid var(--color-border-subtle);
+        }
+
+        /* ================================================= */
+        /* 📱 MOBILE ONLY – SAFE & ISOLATED */
+        /* ================================================= */
+        @media (max-width: 768px) {
+
+            .site-header {
+                padding: 15px 20px;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .main-nav {
+                display: none;
+                width: 100%;
+            }
+
+            .main-nav.open {
+                display: block;
+            }
+
+            .main-nav ul {
+                flex-direction: column;
+                gap: 14px;
+                align-items: center;
+                margin-top: 15px;
+            }
+
+            .page-header {
+                padding: 50px 20px;
+            }
+
+            .page-header h1 {
+                font-size: clamp(32px, 8vw, 44px);
+                letter-spacing: 3px;
+            }
+
+            .page-header p {
+                font-size: 16px;
+            }
+
+            .news-section-title {
+                padding: 0 20px 10px;
+                font-size: 20px;
+            }
+
+            .news-section {
+                padding: 30px 20px 60px;
+                grid-template-columns: 1fr;
+            }
+
+            .news-card {
+                padding: 24px;
+            }
+
+            .news-card h3 {
+                font-size: 18px;
+            }
+
+            .news-card p {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="site-header">
+    <div class="logo-container">
+        <span class="logo-icon">L</span>
+        <span class="team-name">TEAM LETIZIA</span>
+    </div>
+
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+    <nav class="main-nav" id="mainNav">
+        <ul>
+            <li><a href="main.html">ホーム</a></li>
+            <li><a href="games.html">ゲーム</a></li>
+            <li><a href="news.html" class="active">ニュース</a></li>
+            <li><a href="about.html">私について</a></li>
+            <li><a href="contact.html">お問い合わせ</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="page-header geometric-bg">
+    <h1>最新ニュース</h1>
+    <p>Team Letizia の最新発表をチェックしよう</p>
+</section>
+
+<div class="news-section-title">セクション - ニュース</div>
+
+<section class="news-section">
+    <a href="news_jap/next_project.html" class="news-card">
+        <h3>次回プロジェクト</h3>
+        <p>私たちのスタジオが皆さんにお見せしたい、新しいビジュアルノベルのプロジェクトです 🌙</p>
+        <span class="read-more">続きを読む ></span>
+    </a>
+</section>
+
+<footer>
+    © 2025 Team Letizia — 無断転載禁止
+</footer>
+
+<script>
+    function toggleMenu() {
+        document.getElementById("mainNav").classList.toggle("open");
+    }
+</script>
+
+</body>
+</html>

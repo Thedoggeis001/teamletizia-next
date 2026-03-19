@@ -1,0 +1,84 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum AdminRole {
+  SUPERADMIN
+  EDITOR
+}
+
+model News {
+  id          String    @id @default(cuid())
+  title       String
+  slug        String    @unique
+  excerpt     String?
+  content     String
+  imageUrl    String? // ✅ AGGIUNGI QUESTA RIGA
+  publishedAt DateTime?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([publishedAt])
+  @@index([createdAt])
+}
+
+model AdminUser {
+  id           String    @id @default(cuid())
+  email        String    @unique
+  passwordHash String
+  role         AdminRole @default(EDITOR)
+
+  createdAt DateTime @default(now())
+
+  auditLogs AuditLog[]
+  sessions  AdminSession[]
+}
+
+model AdminSession {
+  id        String   @id @default(cuid())
+  tokenHash String   @unique
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+
+  adminUserId String
+  adminUser   AdminUser @relation(fields: [adminUserId], references: [id], onDelete: Cascade)
+
+  @@index([adminUserId])
+  @@index([expiresAt])
+}
+
+model AuditLog {
+  id String @id @default(cuid())
+
+  actorId String?
+  actor   AdminUser? @relation(fields: [actorId], references: [id], onDelete: SetNull)
+
+  action     String
+  targetType String
+  targetId   String?
+
+  ipHash String?
+
+  createdAt DateTime @default(now())
+
+  @@index([actorId])
+  @@index([targetType, targetId])
+  @@index([createdAt])
+}
+
+model ContactMessage {
+  id      String @id @default(cuid())
+  name    String
+  email   String
+  message String
+
+  createdAt DateTime @default(now())
+
+  @@index([createdAt])
+}

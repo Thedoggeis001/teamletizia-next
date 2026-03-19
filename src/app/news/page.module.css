@@ -1,0 +1,232 @@
+/* =========================
+   WRAPPER (importantissimo)
+   ========================= */
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #0d0d0f;
+  color: white;
+  font-family: "Poppins", sans-serif;
+}
+
+/* =========================
+   THEME VARIABLES
+   ========================= */
+:global(:root) {
+  --color-bg-dark: #0d0d0f;
+  --color-bg-header: #15151a;
+  --color-bg-card: #1c1c20;
+  --color-neon-pink: #ff479a;
+  --color-neon-glow: rgba(255, 71, 154, 0.45);
+  --color-text: #ffffff;
+  --color-text-muted: #c2c2c2;
+  --color-border: rgba(255, 255, 255, 0.08);
+}
+
+/* =========================
+   HEADER / NAV
+   ========================= */
+:global(.site-header) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: var(--color-bg-header);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+:global(.logo-container) {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+:global(.logo-icon) {
+  background: var(--color-neon-pink);
+  padding: 10px 14px;
+  border-radius: 6px;
+  box-shadow: 0 0 12px var(--color-neon-glow);
+}
+
+:global(.team-name) {
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+:global(.main-nav ul) {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  padding: 0;
+  margin: 0;
+}
+
+:global(.main-nav a) {
+  color: var(--color-text-muted);
+  text-decoration: none;
+  font-size: 16px;
+  transition: 0.2s;
+}
+
+:global(.main-nav a:hover),
+:global(.main-nav a.active) {
+  color: var(--color-neon-pink);
+}
+
+/* =========================
+   HERO (page-header)
+   ========================= */
+:global(.page-header) {
+  text-align: center;
+  padding: 110px 20px 100px; /* ✅ più spazio sotto */
+  border-bottom: 2px solid var(--color-neon-pink);
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(circle at 15% 20%, rgba(255, 71, 154, 0.12), transparent 45%),
+              radial-gradient(circle at 85% 65%, rgba(255, 71, 154, 0.10), transparent 50%);
+}
+
+:global(.page-header h1) {
+  font-size: 48px;
+  margin: 0 0 12px;
+  text-shadow: 0 0 12px var(--color-neon-glow);
+}
+
+:global(.page-header p) {
+  font-size: 18px;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* =========================
+   CONTENT AREA (fix reale)
+   ========================= */
+/* ✅ Questa fascia crea “respiro” tra hero e contenuto e impedisce
+   che il contenuto appaia attaccato o "risalito". */
+:global(.news-section-title) {
+  text-align: center;
+  margin: 0;                 /* togliamo i margin variabili */
+  padding-top: 70px;         /* ✅ SPAZIO REALE sotto hero */
+  padding-bottom: 30px;
+  color: var(--color-text-muted);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+/* la sezione ora parte più sotto e con padding coerente */
+:global(.news-section) {
+  padding: 0 40px 120px;     /* ✅ grande spazio sotto */
+  display: flex;
+  justify-content: center;
+}
+
+/* =========================
+   CARD
+   ========================= */
+:global(.news-card) {
+  width: min(820px, 100%);
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: center;
+
+  text-decoration: none;
+  color: inherit;
+
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  padding: 26px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+}
+
+:global(.news-card:hover) {
+  transform: translateY(-6px);
+  border-color: rgba(255, 71, 154, 0.35);
+  box-shadow:
+    0 0 22px var(--color-neon-glow),
+    0 10px 35px rgba(0, 0, 0, 0.55);
+}
+
+:global(.card-content h3) {
+  margin: 0 0 8px;
+  color: var(--color-neon-pink);
+  font-size: 22px;
+}
+
+:global(.news-meta) {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  margin-bottom: 10px;
+}
+
+:global(.card-content p) {
+  margin: 0;
+  color: var(--color-text-muted);
+}
+
+:global(.read-more) {
+  color: var(--color-neon-pink);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+:global(footer) {
+  margin-top: auto; /* ✅ footer sempre in fondo */
+  text-align: center;
+  padding: 30px;
+  background: var(--color-bg-header);
+  color: #777;
+  border-top: 1px solid var(--color-border);
+}
+
+/* =========================
+   MOBILE
+   ========================= */
+@media (max-width: 768px) {
+  :global(.site-header) {
+    flex-direction: column;
+    gap: 14px;
+    padding: 18px 20px;
+  }
+
+  :global(.main-nav ul) {
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+
+  :global(.page-header) {
+    padding: 80px 20px 70px;
+  }
+
+  :global(.page-header h1) {
+    font-size: 32px;
+  }
+
+  :global(.news-section-title) {
+    padding-top: 55px;
+    padding-bottom: 24px;
+  }
+
+  :global(.news-section) {
+    padding: 0 20px 90px;
+  }
+
+  :global(.news-card) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

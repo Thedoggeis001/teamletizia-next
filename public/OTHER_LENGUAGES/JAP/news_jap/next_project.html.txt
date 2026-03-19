@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMPERIUM EUROPAE: DIES TRISTIS – Team Letizia</title>
+
+    <style>
+        :root {
+            --bg-dark: #121212;
+            --text-light: #f0f0f0;
+            --text-secondary: #aaaaaa;
+            --pink-neon: #ff69b4;
+            --pink-neon-shadow: 0 0 8px rgba(255, 105, 180, 0.7);
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            margin: 0;
+        }
+
+        a {
+            color: var(--pink-neon);
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #ff85c1;
+        }
+
+        /* --- BACK BUTTON --- */
+        .back-to-news {
+            display: inline-flex;
+            align-items: center;
+            margin-bottom: 25px;
+            font-size: 1.1em;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .back-to-news:hover {
+            transform: translateX(-5px);
+            transition: transform 0.3s;
+        }
+
+        .arrow-icon {
+            font-size: 1.5em;
+            margin-right: 8px;
+            text-shadow: var(--pink-neon-shadow);
+        }
+
+        /* --- LAYOUT --- */
+        .article-page-container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        /* --- HEADER --- */
+        .article-title {
+            color: var(--pink-neon);
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: var(--pink-neon-shadow);
+        }
+
+        .article-summary {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .article-metadata {
+            color: var(--text-secondary);
+            font-size: 0.9em;
+        }
+
+        .article-hero-image img {
+            width: 100%;
+            margin-top: 30px;
+            border-radius: 6px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.5);
+        }
+
+        /* --- BODY --- */
+        .article-body {
+            margin-top: 40px;
+        }
+
+        .article-body p {
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            color: var(--pink-neon);
+            font-size: 2em;
+            margin: 40px 0 15px;
+        }
+
+        .pink-blockquote {
+            border-left: 5px solid var(--pink-neon);
+            padding: 15px 20px;
+            margin: 30px 0;
+            color: var(--text-secondary);
+            font-style: italic;
+            background-color: #1a1a1a;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .article-title {
+                font-size: 2.2em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<main class="article-page-container">
+
+    <a href="news.html" class="back-to-news">
+        <span class="arrow-icon">&lt;</span> すべてのニュースに戻る
+    </a>
+
+    <header>
+        <h1 class="article-title">IMPERIUM EUROPAE: DIES TRISTIS</h1>
+
+        <p class="article-summary">
+            Team Letizia は次なるナラティブ作品を発表します。
+            それは、記憶、アイデンティティ、そして歴史が私たちを置き去りにしたときに
+            何が残るのかを描くビジュアルノベルです。
+        </p>
+
+        <div class="article-metadata">
+            公開日：2025年8月5日 · 作者：Team Letizia
+        </div>
+
+        <figure class="article-hero-image">
+            <img src="file_jap\TIBOR_KALUSS.png"
+                 alt="Imperium Europae: Dies Tristis – ビジュアルノベル公開">
+        </figure>
+    </header>
+
+    <section class="article-body">
+        <p>
+            <strong>Imperium Europae: Dies Tristis</strong> は、
+            現代ヨーロッパを舞台としたナラティブ・ビジュアルノベルです。
+            その世界を見つめるのは、もはやそこに属さない二人の存在。
+            オーストリア＝ハンガリー帝国の元歩兵将校である猪のティボルと、
+            ハプスブルク家の血を引く鷲の貴族シュトラウス。
+            彼らは、自分たちを形作った世界が忘れ去られた現代に目を覚まします。
+        </p>
+
+        <p>
+            帝国がかつて存在した場所には、現代の都市がそびえ立ちます。
+            言語は変わり、象徴は色あせ、記憶は博物館の説明文や
+            装飾的な歴史として消費されるだけのものとなりました。
+            ティボルとシュトラウスが直面するのは、物理的な荒廃だけではなく、
+            意味そのものの崩壊なのです。
+        </p>
+
+        <h2 class="section-title">✨ 第1章：かつてのヨーロッパ</h2>
+        <p>
+            物語は夜明けのウィーンから始まります。
+            建設現場、広告スクリーン、見知らぬ旗が立ち並ぶ街で、
+            彼らが仕えた帝国はもはや存在しません。
+            そしてヨーロッパ自身も、彼らに居場所を与えることを
+            望んでいないかのように見えます。
+        </p>
+
+        <p>
+            旅はウィーン、ブダペスト、トリエステ、サラエボ、ブリュッセルへと続きます。
+            それぞれの都市は異なる傷を象徴しています。
+            見世物と化した記憶、分断されたナショナリズム、
+            流動的なアイデンティティ、解決されないトラウマ、
+            そして魂を失った官僚主義。
+        </p>
+
+        <blockquote class="pink-blockquote">
+            「それを定義していた世界が消えたとき、アイデンティティには何が残るのか？」
+        </blockquote>
+
+        <h2 class="section-title">🧭 二つの遺物、帰る場所はない</h2>
+        <p>
+            ティボルは適応することで生き延びます。
+            彼は規律と秩序を信じていますが、未来は信じていません。
+            一方シュトラウスは、階層、責任、道徳的構造を失った世界を
+            受け入れることを拒みます。
+            彼は過去を復活させようとはせず、
+            現代に「欠けているもの」を突きつけようとします。
+        </p>
+
+        <p>
+            二人の関係は、正解も不正解もない選択肢によって変化していきます。
+            距離、信頼、思想的な亀裂は、
+            しばしば衝突ではなく沈黙の中で静かに広がっていきます。
+        </p>
+
+        <h2 class="section-title">🎭 テーマとトーン</h2>
+        <p>
+            Imperium Europae: Dies Tristis は、
+            ノスタルジーの賛美でも政治的マニフェストでもありません。
+            それは実存的なドラマであり、
+            ポスト・ヒストリカルなヨーロッパにおける
+            責任、無意味さ、そして記憶の重さを描いた
+            繊細な政治風刺でもあります。
+        </p>
+
+        <blockquote class="pink-blockquote">
+            「帝国は一度だけ死ぬのではない。
+            なぜ重要だったのかを誰も覚えていなくなったとき、再び死ぬのだ。」
+        </blockquote>
+
+        <h2 class="section-title">🕹️ ゲームプレイと構造</h2>
+        <p>
+            ゲームプレイは物語の選択とキャラクター同士の関係性を中心に構成されています。
+            目に見えない変数が物語を形作り、
+            同じ崩壊に対する異なる答えを示す複数のエンディングへと導きます。
+        </p>
+
+        <p>
+            1回のプレイ時間はおよそ5〜7時間。
+            別ルートでは「より良い結末」ではなく、
+            新たな視点が明らかになります。
+        </p>
+
+        <h2 class="section-title">📅 今後について</h2>
+        <p>
+            Imperium Europae: Dies Tristis は現在開発中です。
+            今後数か月のうちに、さらなる情報を公開予定です。
+        </p>
+
+        <p>
+            本作は、プレイヤーの知性と感情的没入を尊重する
+            ナラティブ体験を届けるという、
+            Team Letizia の姿勢を象徴するプロジェクトです。
+            画面が暗転した後も、長く心に残る物語となるでしょう。
+        </p>
+    </section>
+
+</main>
+
+</body>
+</html>
+

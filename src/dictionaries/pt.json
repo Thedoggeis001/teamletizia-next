@@ -1,0 +1,64 @@
+{
+  "nav": {
+    "home": "Início",
+    "shop": "Loja",
+    "games": "Jogos",
+    "news": "Notícias",
+    "about": "Sobre mim",
+    "contact": "Contato",
+    "privacy": "Política de Privacidade"
+  },
+  "home": {
+    "title": "Criando mundos inspirados na estética japonesa",
+    "subtitle": "Visual novels, JRPGs, universos em estilo anime e histórias emocionantes",
+    "featuredTitle": "Jogos em Destaque",
+    "inDevelopment": "EM DESENVOLVIMENTO",
+    "pleaseWait": "Por favor, aguarde com paciência"
+
+  },
+  "games": {
+    "title": "Nossos Jogos",
+    "subtitle": "Visual novels e JRPGs inspirados na estética japonesa",
+    "sectionTitle": "Títulos",
+    "status": "Visual novel (em desenvolvimento)"
+  },
+
+  "news": {
+    "title": "Últimas Notícias",
+    "subtitle": "Fique por dentro dos últimos anúncios da Team Letizia",
+    "sectionLabel": "Seção - Notícias",
+    "readMore": "Ler mais >",
+    "cardTitle": "Próximo Projeto",
+    "cardExcerpt": "Um novo projeto de visual novel que nosso estúdio gostaria de apresentar a você"
+  },
+
+  "privacyPage": {
+    "title": "Política de Privacidade",
+    "note": "Esta página é fornecida em inglês como versão oficial. Traduções podem ser adicionadas apenas por conveniência.",
+    "lastUpdated": "Última atualização"
+  },
+
+  "about": {
+    "title": "Sobre mim",
+    "tagline": "Descubra a visão por trás da Team Letizia e a jornada que move o nosso trabalho.",
+    "headline": "Simone, o Tecelão de Histórias",
+    "p1": "Olá! Eu sou Simone, um desenvolvedor e contador de histórias dedicado, cuja paixão é criar mundos por meio de Visual Novels e JRPGs. Meu trabalho é profundamente inspirado pela estética e pelo espírito dos clássicos japoneses, sempre buscando dar às minhas criações uma alma única e reconhecível.",
+    "p2": "Minha missão é simples: dar vida a narrativas épicas e a uma jogabilidade envolvente. Cada projeto é uma ponte para um novo universo, construído com escolhas desafiadoras, personagens memoráveis e atenção meticulosa à experiência do jogador.",
+    "p3": "Com uma base sólida em Game Design, Character Art e Narrative Development, busco criar experiências que não apenas entretenham, mas também cativem e inspirem reflexão."
+   },
+   "contact": {
+    "title": "Fale Conosco",
+    "subtitle": "Entre em contato com a Team Letizia",
+    "sectionTitle": "Enviar uma mensagem",
+    "namePlaceholder": "Seu nome",
+    "emailPlaceholder": "Seu e-mail",
+    "messagePlaceholder": "Sua mensagem",
+    "send": "Enviar",
+    "success": "Mensagem enviada com sucesso!",
+    "error": "Erro ao enviar a mensagem. Tente novamente."
+   }
+
+
+
+
+}

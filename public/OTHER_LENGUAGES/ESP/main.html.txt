@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Letizia - Novelas Visuales y JRPG</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #0a0a0a;
+            color: #fff;
+        }
+
+        /* HEADER */
+        .site-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background: #111;
+            border-bottom: 2px solid #222;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .logo-icon {
+            background: #e91e63;
+            padding: 10px 14px;
+            border-radius: 6px;
+        }
+
+        .main-nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .main-nav a {
+            color: #ccc;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .main-nav a:hover,
+        .main-nav a.active {
+            color: #e91e63;
+        }
+
+        .lang-selector select {
+            background-color: #111;
+            color: #fff;
+            border: 1px solid #e91e63;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* HERO */
+        .hero {
+            text-align: center;
+            padding: 150px 20px;
+            background: url("hero.jpg") center / cover no-repeat;
+            background-color: #330033;
+            border-bottom: 5px solid #e91e63;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            text-shadow: 0 0 10px rgba(233, 30, 99, 0.5);
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #ccc;
+            min-height: 25px;
+        }
+
+        .typewriter-cursor {
+            display: inline-block;
+            width: 2px;
+            height: 1.2em;
+            background: #e91e63;
+            margin-left: 3px;
+            animation: blink 0.7s infinite;
+        }
+
+        @keyframes blink {
+            0%,100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* GAMES */
+        .featured-games {
+            padding: 80px 40px;
+            text-align: center;
+        }
+
+        .game-list {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .game-card {
+            background: #111;
+            padding: 30px;
+            width: 300px;
+            border-radius: 10px;
+            border: 1px solid #222;
+            text-decoration: none;
+            color: inherit;
+            transition: 0.3s;
+        }
+
+        .game-card:hover {
+            transform: translateY(-5px);
+            border-color: #e91e63;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #111;
+            color: #777;
+            border-top: 2px solid #222;
+        }
+
+        /* ========================= */
+        /* 📱 MOBILE – SAFE ADDITION */
+        /* ========================= */
+        @media (max-width: 768px) {
+
+            .site-header {
+                flex-direction: column;
+                gap: 15px;
+                padding: 20px;
+            }
+
+            .main-nav ul {
+                flex-direction: column;
+                gap: 12px;
+                align-items: center;
+            }
+
+            .lang-selector select {
+                width: 100%;
+                max-width: 220px;
+            }
+
+            .hero {
+                padding: 80px 20px;
+            }
+
+            .hero h1 {
+                font-size: 30px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .featured-games {
+                padding: 50px 20px;
+            }
+
+            .game-card {
+                width: 100%;
+                max-width: 340px;
+            }
+
+            footer {
+                font-size: 14px;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="site-header">
+    <div class="logo-container">
+        <span class="logo-icon">L</span>
+        <span>TEAM LETIZIA</span>
+    </div>
+
+    <nav class="main-nav">
+        <ul>
+            <li><a href="main.html" class="active">Inicio</a></li>
+            <li><a href="games.html">Juegos</a></li>
+            <li><a href="news.html">Noticias</a></li>
+            <li><a href="about.html">Sobre Mí</a></li>
+            <li><a href="contact.html">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <div class="lang-selector">
+        <select onchange="changeSiteLanguage(this.value)">
+            <option disabled selected>Seleccionar idioma</option>
+            <option value="en">🇺🇸 English</option>
+            <option value="es">🇪🇸 Español</option>
+            <option value="jp">🇯🇵 日本語</option>
+            <option value="cn">🇨🇳 中文</option>
+        </select>
+    </div>
+</header>
+
+<section class="hero">
+    <h1>Creando Mundos Inspirados en la Estética Japonesa</h1>
+    <p id="hero-subtitle">
+        Novelas Visuales, JRPGs, universos de estilo Anime e historias emocionales.
+    </p>
+</section>
+
+<section class="featured-games">
+    <h2>Juegos Destacados</h2>
+    <div class="game-list">
+        <a href="news_Esp\next_project.html" class="game-card">
+            <h3>TRABAJO EN CURSO</h3>
+            <p>Sé paciente</p>
+        </a>
+    </div>
+</section>
+
+<footer>
+    © 2025 Team Letizia — Todos los Derechos Reservados
+</footer>
+
+<script>
+    function changeSiteLanguage(lang) {
+        const pages = {
+            en: "../../main.html",
+            es: "main.html",
+            jp: "../JAP/main.html",
+            cn: "../CHI/main.html"
+        };
+
+        if (pages[lang]) {
+            window.location.href = pages[lang];
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const el = document.getElementById("hero-subtitle");
+        const text = el.textContent;
+        let i = 0;
+
+        el.textContent = "";
+
+        function type() {
+            if (i < text.length) {
+                el.innerHTML =
+                    text.substring(0, i + 1) +
+                    '<span class="typewriter-cursor"></span>';
+                i++;
+                setTimeout(type, 50);
+            } else {
+                el.textContent = text;
+            }
+        }
+
+        type();
+    });
+</script>
+
+</body>
+</html>

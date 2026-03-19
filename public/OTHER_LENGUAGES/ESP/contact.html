@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contacto - Team Letizia</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+body {
+    margin:0;
+    font-family:Arial,sans-serif;
+    background-color:#0a0a0a;
+    color:#fff;
+    overflow-x: hidden; /* 🔒 BLOCCA SCROLL LATERALE */
+}
+
+.site-header{
+    display:flex; 
+    justify-content:space-between; 
+    align-items:center; 
+    padding:20px 40px; 
+    background:#111; 
+    position: relative; 
+    z-index: 1000;
+}
+
+.wave-divider {
+    height: 5px; 
+    width: 100%;
+    background-color: #0a0a0a; 
+    position: absolute;
+    bottom: 0; 
+    left: 0;
+    z-index: 999;
+}
+
+.logo-container{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.logo-icon{
+    background:#e91e63;
+    padding:10px 14px;
+    border-radius:6px;
+}
+
+.team-name{letter-spacing:2px;}
+
+.main-nav ul{
+    list-style:none;
+    display:flex;
+    gap:25px;
+    padding:0;
+    margin:0;
+}
+
+.main-nav a{
+    color:#ccc;
+    text-decoration:none;
+    font-size:16px;
+    transition:0.2s;
+}
+
+.main-nav a:hover,
+.main-nav a.active{
+    color:#e91e63;
+}
+
+/* ☰ HAMBURGER STATICO */
+.hamburger {
+    display: none;
+    font-size: 26px;
+    color: #fff;
+}
+
+/* ================= MOBILE FIX REALE ================= */
+@media (max-width: 768px) {
+
+    .site-header {
+        flex-direction: column;
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+}
+
+.page-header{
+    text-align:center; 
+    padding:100px 20px; 
+    background:url('contact-hero.jpg') center/cover no-repeat;
+    margin-top:-5px;
+}
+
+.page-header h1{
+    font-size:48px;
+    margin-bottom:10px;
+}
+
+.contact-section{
+    padding:60px 40px;
+    max-width:600px;
+    margin:auto;
+}
+
+.contact-section h2{
+    text-align:center;
+    color:#e91e63;
+}
+
+.contact-section form{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.contact-section input,
+.contact-section textarea{
+    padding:10px;
+    border-radius:6px;
+    border:1px solid #222;
+    background:#111;
+    color:#fff;
+    font-size:16px;
+}
+
+.contact-section button{
+    padding:12px;
+    border:none;
+    border-radius:6px;
+    background:#e91e63;
+    color:#fff;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.2s;
+}
+
+.contact-section button:hover{
+    background:#d81b60;
+}
+
+.social-links{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    margin-top:40px;
+}
+
+.social-links a{
+    color:#fff;
+    font-size:30px;
+}
+
+.social-links a:hover{
+    color:#e91e63;
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    background:#111;
+    color:#777;
+    border-top:2px solid #222;
+}
+</style>
+</head>
+
+<body>
+
+<header class="site-header">
+    <div class="logo-container">
+        <span class="logo-icon">L</span>
+        <span class="team-name">TEAM LETIZIA</span>
+    </div>
+
+    <nav class="main-nav">
+        <ul>
+            <li><a href="main.html">Inicio</a></li>
+            <li><a href="games.html">Juegos</a></li>
+            <li><a href="news.html">Noticias</a></li>
+            <li><a href="about.html">Sobre mí</a></li>
+            <li><a href="contact.html" class="active">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <div class="wave-divider"></div>
+</header>
+
+<section class="page-header">
+    <h1>Contacto</h1>
+    <p>Ponte en contacto con Team Letizia</p>
+</section>
+
+<section class="contact-section">
+    <h2>Enviar un mensaje</h2>
+    <form>
+        <input type="text" name="name" placeholder="Tu nombre" required>
+        <input type="email" name="email" placeholder="Correo electrónico" required>
+        <textarea name="message" rows="6" placeholder="Escribe tu mensaje aquí" required></textarea>
+        <button type="submit">Enviar</button>
+    </form>
+
+    <div class="social-links">
+        <a href="https://x.com/Teamletizia" target="_blank"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://www.youtube.com/@KontemplativerMystiker" target="_blank"><i class="fab fa-youtube"></i></a>
+    </div>
+</section>
+
+<footer>
+    © 2025 Team Letizia — Todos los derechos reservados
+</footer>
+
+<!-- ================= EMAILJS ================= -->
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+(function(){
+    emailjs.init("qAfMWGAd4J3XMC5qK");
+})();
+const form = document.querySelector("form");
+form.addEventListener("submit", function(e) {
+    e.preventDefault();
+    emailjs.sendForm("service_g1t9c9a","template_4z6wc89",this)
+    .then(() => {
+        alert("¡El mensaje se ha enviado correctamente!");
+        form.reset();
+    })
+    .catch(() => {
+        alert("Se produjo un error al enviar el mensaje.");
+    });
+});
+</script>
+
+</body>
+</html>
