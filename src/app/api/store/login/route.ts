@@ -11,16 +11,18 @@ function getApiBase() {
 }
 
 export async function POST(req: Request) {
-  try {
-    const body = await req.text();
+  const url = `${getApiBase()}/api/login`;
 
-    const res = await fetch(`${getApiBase()}/api/login`, {
+  try {
+    const payload = await req.json();
+
+    const res = await fetch(url, {
       method: "POST",
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
-      body,
+      body: JSON.stringify(payload),
       cache: "no-store",
     });
 
@@ -33,10 +35,19 @@ export async function POST(req: Request) {
       },
     });
   } catch (error) {
+    const message =
+      error instanceof Error ? error.message : "Store login proxy error";
+
+    console.error("STORE LOGIN PROXY ERROR", {
+      url,
+      message,
+      error,
+    });
+
     return NextResponse.json(
       {
         success: false,
-        message: error instanceof Error ? error.message : "Store login proxy error",
+        message: message,
         data: null,
         errors: null,
       },
