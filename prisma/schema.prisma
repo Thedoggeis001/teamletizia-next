@@ -1,6 +1,5 @@
 generator client {
-  provider = "prisma-client"
-  output   = "../src/generated/prisma"
+  provider = "prisma-client-js"
 }
 
 datasource db {
@@ -18,7 +17,7 @@ model News {
   slug        String    @unique
   excerpt     String?
   content     String
-  imageUrl    String? // ✅ AGGIUNGI QUESTA RIGA
+  imageUrl    String?
   publishedAt DateTime?
 
   createdAt DateTime @default(now())
@@ -41,10 +40,10 @@ model AdminUser {
 }
 
 model AdminSession {
-  id        String   @id @default(cuid())
-  tokenHash String   @unique
-  expiresAt DateTime
-  createdAt DateTime @default(now())
+  id         String   @id @default(cuid())
+  tokenHash  String   @unique
+  expiresAt  DateTime
+  createdAt  DateTime @default(now())
 
   adminUserId String
   adminUser   AdminUser @relation(fields: [adminUserId], references: [id], onDelete: Cascade)
