@@ -1,5 +1,3 @@
-const API_URL = process.env.NEXT_PUBLIC_API_URL?.trim() ?? "";
-
 const TOKEN_KEY = "store_token";
 
 export type StoreUser = {
@@ -24,11 +22,7 @@ type AuthPayload = {
 };
 
 function getApiBase() {
-  if (!API_URL) {
-    throw new Error("NEXT_PUBLIC_API_URL mancante");
-  }
-
-  return API_URL;
+  return "/api/store";
 }
 
 function isBrowser() {
@@ -74,6 +68,7 @@ async function authFetch<T>(path: string, init?: RequestInit): Promise<T> {
       ...getAuthHeaders(!(init?.body instanceof FormData)),
       ...(init?.headers ?? {}),
     },
+    cache: "no-store",
   });
 
   const payload = await parseJson<T & ApiEnvelope<any>>(res);
@@ -109,7 +104,7 @@ export function isStoreLoggedIn(): boolean {
 }
 
 export async function storeLogin(email: string, password: string): Promise<string> {
-  const result = await authFetch<ApiEnvelope<AuthPayload>>("/api/login", {
+  const result = await authFetch<ApiEnvelope<AuthPayload>>("/login", {
     method: "POST",
     body: JSON.stringify({ email, password }),
   });
@@ -130,7 +125,7 @@ export async function storeRegister(
   password: string,
   password_confirmation: string
 ): Promise<string> {
-  const result = await authFetch<ApiEnvelope<AuthPayload>>("/api/register", {
+  const result = await authFetch<ApiEnvelope<AuthPayload>>("/register", {
     method: "POST",
     body: JSON.stringify({
       name,
@@ -151,7 +146,7 @@ export async function storeRegister(
 }
 
 export async function getStoreMe(): Promise<StoreUser> {
-  const result = await authFetch<ApiEnvelope<StoreUser>>("/api/me", {
+  const result = await authFetch<ApiEnvelope<StoreUser>>("/me", {
     method: "GET",
   });
 
@@ -167,11 +162,11 @@ export async function getStoreMe(): Promise<StoreUser> {
 
 export async function storeLogout(): Promise<void> {
   try {
-    await authFetch("/api/logout", {
+    await authFetch("/logout", {
       method: "POST",
     });
   } catch {
-    // anche se il backend fallisce, puliamo comunque il token locale
+    // puliamo comunque il token locale
   } finally {
     clearStoreToken();
   }
