@@ -1,7 +1,5 @@
 import { clearStoreToken, getStoreToken } from "@/lib/storeAuth";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL?.trim() ?? "";
-
 export type OrderProduct = {
   id: number;
   name: string;
@@ -60,11 +58,7 @@ type OrdersApiEnvelope<T> =
     };
 
 function getApiBase() {
-  if (!API_URL) {
-    throw new Error("NEXT_PUBLIC_API_URL mancante");
-  }
-
-  return API_URL;
+  return "/api/store";
 }
 
 function getAuthHeaders() {
@@ -125,15 +119,15 @@ async function ordersFetch<T>(path: string): Promise<T> {
 }
 
 export async function getOrders(): Promise<UserOrder[]> {
-  return ordersFetch<UserOrder[]>("/api/orders");
+  return ordersFetch<UserOrder[]>("/orders");
 }
 
 export async function getOrder(orderId: number): Promise<UserOrder> {
-  return ordersFetch<UserOrder>(`/api/orders/${orderId}`);
+  return ordersFetch<UserOrder>(`/orders/${orderId}`);
 }
 
 export async function getOrderKeys(orderId: number): Promise<OrderKey[]> {
-  return ordersFetch<OrderKey[]>(`/api/orders/${orderId}/keys`);
+  return ordersFetch<OrderKey[]>(`/orders/${orderId}/keys`);
 }
 
 export function formatOrderPrice(value: number | string | null | undefined) {

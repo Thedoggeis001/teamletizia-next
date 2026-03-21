@@ -1,7 +1,6 @@
 import { clearStoreToken, getStoreToken } from "@/lib/storeAuth";
 
 const CART_ORDER_KEY = "store_cart_order_id";
-const API_URL = process.env.NEXT_PUBLIC_API_URL?.trim() ?? "";
 
 export type CartVariant = {
   id: number;
@@ -47,11 +46,7 @@ type CartApiResponse =
     };
 
 function getApiBase() {
-  if (!API_URL) {
-    throw new Error("NEXT_PUBLIC_API_URL mancante");
-  }
-
-  return API_URL;
+  return "/api/store";
 }
 
 function getAuthHeaders() {
@@ -172,7 +167,7 @@ export function getCartTotals(order: CartOrder | null) {
 }
 
 export async function createCart(): Promise<CartOrder> {
-  const result = await apiFetch<CartApiResponse>("/api/cart", { method: "POST" });
+  const result = await apiFetch<CartApiResponse>("/cart", { method: "POST" });
   const order = extractOrder(result);
 
   if (!order?.id) {
@@ -184,7 +179,7 @@ export async function createCart(): Promise<CartOrder> {
 }
 
 export async function getCart(orderId: number): Promise<CartOrder> {
-  const result = await apiFetch<CartApiResponse>(`/api/cart/${orderId}`, { method: "GET" });
+  const result = await apiFetch<CartApiResponse>(`/cart/${orderId}`, { method: "GET" });
   const order = extractOrder(result);
 
   if (!order?.id) {
@@ -215,7 +210,7 @@ export async function addCartItem(params: {
 }): Promise<CartOrder> {
   const cart = await ensureCart();
 
-  const result = await apiFetch<CartApiResponse>(`/api/cart/${cart.id}/items`, {
+  const result = await apiFetch<CartApiResponse>(`/cart/${cart.id}/items`, {
     method: "POST",
     body: JSON.stringify({
       product_id: params.productId,
@@ -235,7 +230,7 @@ export async function addCartItem(params: {
 }
 
 export async function removeCartItem(orderId: number, itemId: number): Promise<CartOrder> {
-  const result = await apiFetch<CartApiResponse>(`/api/cart/${orderId}/items/${itemId}`, {
+  const result = await apiFetch<CartApiResponse>(`/cart/${orderId}/items/${itemId}`, {
     method: "DELETE",
   });
 
@@ -253,7 +248,7 @@ export async function checkoutCart(
   orderId: number,
   paymentReference: string
 ): Promise<CartOrder> {
-  const result = await apiFetch<CartApiResponse>(`/api/cart/${orderId}/checkout`, {
+  const result = await apiFetch<CartApiResponse>(`/cart/${orderId}/checkout`, {
     method: "POST",
     body: JSON.stringify({
       payment_reference: paymentReference,
