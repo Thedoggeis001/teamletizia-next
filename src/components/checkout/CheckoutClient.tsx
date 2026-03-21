@@ -11,7 +11,7 @@ import {
   getStoredCartOrderId,
   getCartTotals,
 } from "@/lib/cart";
-import { isStoreLoggedIn } from "@/lib/storeAuth";
+import { isStoreLoggedIn, getStoreToken } from "@/lib/storeAuth";
 
 function formatPrice(value: number) {
   return new Intl.NumberFormat("en-US", {
@@ -71,22 +71,21 @@ export default function CheckoutClient() {
     setError(null);
 
     try {
-      const token = localStorage.getItem("store_token");
+      const token = getStoreToken();
 
       if (!token) {
         throw new Error("Login richiesto");
       }
 
-      const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/stripe/checkout/${cart.id}`,
-        {
-          method: "POST",
-          headers: {
-            Authorization: `Bearer ${token}`,
-            Accept: "application/json",
-          },
-        }
-      );
+      const res = await fetch(`/api/store/stripe/checkout/${cart.id}`, {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({}),
+      });
 
       const data = await res.json().catch(() => null);
 
@@ -96,11 +95,13 @@ export default function CheckoutClient() {
         );
       }
 
-      if (!data?.url) {
+      const url = data?.url ?? data?.data?.url;
+
+      if (!url) {
         throw new Error("URL checkout Stripe mancante");
       }
 
-      window.location.href = data.url;
+      window.location.href = url;
     } catch (err) {
       setError(err instanceof Error ? err.message : "Errore checkout");
       setProcessing(false);
