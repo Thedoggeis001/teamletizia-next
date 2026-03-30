@@ -3,10 +3,12 @@
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import {
+  OrderKey,
   UserOrder,
   formatOrderDate,
   formatOrderPrice,
-  getOrders,
+  getOrder,
+  getOrderKeys,
 } from "@/lib/orders";
 import { isStoreLoggedIn } from "@/lib/storeAuth";
 
@@ -39,17 +41,14 @@ function extractItems(order: LooseOrder): LooseRecord[] {
   );
 }
 
-function extractKeys(order: LooseOrder): LooseRecord[] {
-  return (
-    getArray(order.digital_keys) ||
-    getArray(order.keys) ||
-    getArray(order.license_keys) ||
-    []
-  );
-}
-
 function itemTitle(item: LooseRecord): string {
+  const product =
+    item.product && typeof item.product === "object"
+      ? (item.product as LooseRecord)
+      : null;
+
   return (
+    getString(product?.name) ||
     getString(item.product_name) ||
     getString(item.name) ||
     getString(item.title) ||
@@ -59,7 +58,13 @@ function itemTitle(item: LooseRecord): string {
 }
 
 function itemVariant(item: LooseRecord): string | null {
+  const variant =
+    item.variant && typeof item.variant === "object"
+      ? (item.variant as LooseRecord)
+      : null;
+
   return (
+    getString(variant?.name) ||
     getString(item.variant_name) ||
     getString(item.variant) ||
     getString(item.option_name) ||
@@ -68,11 +73,7 @@ function itemVariant(item: LooseRecord): string | null {
 }
 
 function itemQuantity(item: LooseRecord): number | null {
-  return (
-    getNumber(item.quantity) ||
-    getNumber(item.qty) ||
-    null
-  );
+  return getNumber(item.quantity) || getNumber(item.qty) || null;
 }
 
 function itemPrice(item: LooseRecord): string | null {
@@ -84,29 +85,11 @@ function itemPrice(item: LooseRecord): string | null {
   return raw !== null ? formatOrderPrice(raw) : null;
 }
 
-function keyValue(entry: LooseRecord): string | null {
-  return (
-    getString(entry.key) ||
-    getString(entry.code) ||
-    getString(entry.license_key) ||
-    getString(entry.value) ||
-    null
-  );
-}
-
-function keyLabel(entry: LooseRecord): string {
-  return (
-    getString(entry.product_name) ||
-    getString(entry.name) ||
-    getString(entry.title) ||
-    "Key digitale"
-  );
-}
-
 export default function OrderDetailClient({
   orderId,
 }: OrderDetailClientProps) {
   const [order, setOrder] = useState<LooseOrder | null>(null);
+  const [digitalKeys, setDigitalKeys] = useState<OrderKey[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -122,26 +105,26 @@ export default function OrderDetailClient({
       if (!loggedIn) {
         if (mounted) {
           setOrder(null);
+          setDigitalKeys([]);
           setLoading(false);
         }
         return;
       }
 
       try {
-        const orders = (await getOrders()) as LooseOrder[];
-        const found = orders.find((entry) => Number(entry.id) === orderId) ?? null;
+        const [orderData, keysData] = await Promise.all([
+          getOrder(orderId),
+          getOrderKeys(orderId),
+        ]);
 
         if (!mounted) return;
 
-        if (!found) {
-          setOrder(null);
-          setError("Ordine non trovato.");
-        } else {
-          setOrder(found);
-        }
+        setOrder(orderData as LooseOrder);
+        setDigitalKeys(Array.isArray(keysData) ? keysData : []);
       } catch (err) {
         if (!mounted) return;
         setOrder(null);
+        setDigitalKeys([]);
         setError(
           err instanceof Error ? err.message : "Errore caricamento dettaglio ordine"
         );
@@ -158,7 +141,6 @@ export default function OrderDetailClient({
   }, [loggedIn, orderId]);
 
   const items = useMemo(() => (order ? extractItems(order) : []), [order]);
-  const digitalKeys = useMemo(() => (order ? extractKeys(order) : []), [order]);
 
   if (loading) {
     return (
@@ -312,19 +294,21 @@ export default function OrderDetailClient({
         <h3 className="text-2xl font-bold text-white">Key digitali</h3>
 
         {digitalKeys.length === 0 ? (
-          <p className="mt-4 text-white/70">Nessuna key digitale associata a questo ordine.</p>
+          <p className="mt-4 text-white/70">
+            Nessuna key digitale associata a questo ordine.
+          </p>
         ) : (
           <div className="mt-5 grid gap-4">
-            {digitalKeys.map((entry, index) => (
+            {digitalKeys.map((entry) => (
               <article
-                key={`${keyLabel(entry)}-${index}`}
+                key={entry.id}
                 className="rounded-[22px] border border-green-500/18 bg-green-500/[0.05] p-4"
               >
                 <p className="text-sm uppercase tracking-[0.16em] text-green-200/75">
-                  {keyLabel(entry)}
+                  {entry.product?.name ?? "Key digitale"}
                 </p>
                 <p className="mt-2 break-all rounded-xl border border-white/10 bg-black/25 px-4 py-3 font-mono text-sm text-white">
-                  {keyValue(entry) ?? "Key non disponibile"}
+                  {entry.key_value}
                 </p>
               </article>
             ))}
